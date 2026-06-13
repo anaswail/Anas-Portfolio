@@ -21,8 +21,6 @@ const TransitionSection = ({
 
   useGSAP(
     () => {
-      // Use ref.current as the scoped container — selectors resolve only inside it.
-      // Using class names that are unique to this component avoids leaking into siblings.
       gsap.from(".ts-title", {
         scale: 0.6,
         opacity: 0,
@@ -53,34 +51,32 @@ const TransitionSection = ({
   return (
     <div
       ref={ref}
-      // 80 vh gives breathing room without consuming a full screen.
-      // py-20 adds internal cushion so planets aren't cropped at edges.
-      className="relative flex h-[80vh] w-full flex-col items-center justify-center gap-5 overflow-hidden py-20"
+      className="pointer-events-none relative flex min-h-[60vh] w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 py-16 sm:gap-5 sm:py-20 lg:h-[80vh] lg:min-h-0"
     >
       {/* Decorative planets — positioned relative to this container */}
       <img
         src={planet1}
         alt=""
         aria-hidden="true"
-        className="ts-planet absolute left-[12%] top-[18%] w-32 opacity-60 lg:w-40"
+        className="ts-planet absolute left-[5%] top-[10%] w-16 opacity-60 sm:left-[12%] sm:top-[18%] sm:w-32 lg:w-40"
       />
       <img
         src={planet3}
         alt=""
         aria-hidden="true"
-        className="ts-planet absolute bottom-[12%] left-[18%] w-28 opacity-60 lg:w-36"
+        className="ts-planet absolute bottom-[8%] left-[8%] w-14 opacity-60 sm:bottom-[12%] sm:left-[18%] sm:w-28 lg:w-36"
       />
       <img
         src={planet3}
         alt=""
         aria-hidden="true"
-        className="ts-planet absolute right-[18%] top-[18%] w-28 opacity-60 lg:w-36"
+        className="ts-planet absolute right-[10%] top-[10%] w-14 opacity-60 sm:right-[18%] sm:top-[18%] sm:w-28 lg:w-36"
       />
       <img
         src={planet2}
         alt=""
         aria-hidden="true"
-        className="ts-planet absolute bottom-[12%] right-[12%] w-32 opacity-60 lg:w-40"
+        className="ts-planet absolute bottom-[8%] right-[5%] w-16 opacity-60 sm:bottom-[12%] sm:right-[12%] sm:w-32 lg:w-40"
       />
 
       {/* Watermark logo */}
@@ -88,14 +84,14 @@ const TransitionSection = ({
         src={logo}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 w-[480px] max-w-[80vw] -translate-x-1/2 -translate-y-1/2 opacity-[0.07] lg:w-[560px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 w-[260px] max-w-[80vw] -translate-x-1/2 -translate-y-1/2 opacity-[0.07] sm:w-[480px] lg:w-[560px]"
       />
 
       {/* Text */}
-      <h2 className="ts-title relative z-10 text-center text-5xl font-extrabold tracking-wider text-transparent [-webkit-text-stroke:2px_#a1a1aa] lg:text-6xl">
+      <h2 className="ts-title relative z-10 px-2 text-center text-3xl font-extrabold tracking-wider text-transparent [-webkit-text-stroke:1.5px_#a1a1aa] sm:text-5xl sm:[-webkit-text-stroke:2px_#a1a1aa] lg:text-6xl">
         {title}
       </h2>
-      <p className="ts-title relative z-10 text-base font-semibold tracking-widest text-accent lg:text-lg">
+      <p className="ts-title relative z-10 px-2 text-center text-sm font-semibold tracking-widest text-accent sm:text-base lg:text-lg">
         {description}
       </p>
     </div>

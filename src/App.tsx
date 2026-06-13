@@ -5,16 +5,16 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 
-// Reduced particle count — 350 individual tweens was heavy.
-// 120 particles, each sharing a single staggered tween batch = far fewer active tweens.
+import rocket from "./assets/rocket.webp";
+
 const PARTICLE_COUNT = 120;
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      // Place all particles randomly up-front with a single gsap.set call
       gsap.set(".particle", {
         x: () => gsap.utils.random(0, window.innerWidth),
         y: () => gsap.utils.random(0, window.innerHeight),
@@ -22,7 +22,6 @@ function App() {
         opacity: () => gsap.utils.random(0.3, 0.9),
       });
 
-      // One batched tween with stagger — much cheaper than 350 independent tweens
       gsap.to(".particle", {
         x: () => gsap.utils.random(0, window.innerWidth),
         y: () => gsap.utils.random(0, window.innerHeight),
@@ -32,7 +31,7 @@ function App() {
         repeat: -1,
         yoyo: true,
         stagger: {
-          amount: 8, // spread start times across 8 s so they don't all move in sync
+          amount: 8,
           from: "random",
         },
       });
@@ -41,7 +40,10 @@ function App() {
   );
 
   return (
-    <div className="app flex flex-col items-center bg-bg min-h-screen overflow-x-hidden">
+    <div
+      ref={mainRef}
+      className="app flex flex-col items-center bg-bg min-h-screen overflow-x-hidden"
+    >
       <Header />
 
       {/* Starfield — fixed, behind everything */}
@@ -59,7 +61,7 @@ function App() {
       </div>
 
       {/* Page content */}
-      <div className="relative z-10 w-full mt-16">
+      <div className="relative z-10 w-full md:mt-16 mt-0">
         <Outlet />
       </div>
 
