@@ -293,10 +293,11 @@ const Header = () => {
         </div>
       </div>
       <div
-        className="mobile-menu md:hidden h-screen w-full z-50"
+        className={`mobile-menu md:hidden w-full z-50 fixed inset-0 
+        ${menuOpen ? " pointer-events-auto" : "pointer-events-none"}`}
         ref={mobileRef}
       >
-        <div className=" fixed right-6 bottom-8 w-14 h-14 drop-shadow-xl">
+        <div className=" fixed right-6 bottom-8 w-14 h-14 drop-shadow-xl pointer-events-auto ">
           <span className="menuBtn absolute inset-0 scale-105 rounded-full bg-linear-to-t from-accent via-primary to-transparent"></span>
 
           <button

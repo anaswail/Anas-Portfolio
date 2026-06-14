@@ -85,9 +85,9 @@ const HomeProjects = () => {
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  {p.tech.map((t) => (
+                  {p.tech.map((t, idx) => (
                     <div
-                      key={t.label}
+                      key={idx}
                       className="flex items-center gap-2 rounded-lg bg-sec-bg px-3 py-1.5 drop-shadow-md"
                     >
                       <img src={t.icon} alt={t.label} className="h-5 w-5" />
