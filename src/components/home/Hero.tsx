@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import cvFile from "../../assets/Anas_Wael_CV.pdf";
+
 import planet1 from "../../assets/planet-1.webp";
 import planet2 from "../../assets/planet-2.webp";
 import planet3 from "../../assets/planet-3.webp";
@@ -153,9 +155,11 @@ const Hero = () => {
               ))}
             </ul>
 
-            <button className="btns-intro-animation rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white drop-shadow-lg transition-colors duration-200 hover:bg-purple-700 md:text-base">
-              Download CV
-            </button>
+            <a href={cvFile} download>
+              <button className="btns-intro-animation cursor-pointer rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white drop-shadow-lg transition-colors duration-200 hover:bg-purple-700 md:text-base">
+                Download CV
+              </button>
+            </a>
           </div>
         </div>
 
