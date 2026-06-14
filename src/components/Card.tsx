@@ -1,6 +1,6 @@
 import github from "../assets/github.webp";
 import figma from "../assets/figma.webp";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type Tech = {
   label: string;

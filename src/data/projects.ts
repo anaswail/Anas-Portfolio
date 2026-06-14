@@ -24,7 +24,7 @@ import creativo from "../assets/creativo.webp";
 import kudzoko from "../assets/kudzoko.webp";
 import myPortfolio from "../assets/anas_portfolio.webp";
 import oldPortfolio from "../assets/old_portfolio.webp";
-import kashkouly from "../assets/kashkouly.webp";
+// import kashkouly from "../assets/kashkouly.webp";
 import collage from "../assets/collage.webp";
 
 export type Collaborator = {
