@@ -1,142 +1,9 @@
 import anas from "../../assets/anas.webp";
 
-import github from "../../assets/github.webp";
-import react from "../../assets/react.webp";
-import typescript from "../../assets/typescript.webp";
-import tailwindcss from "../../assets/tailwindcss.webp";
-import figma from "../../assets/figma.webp";
-import css from "../../assets/css.webp";
-import framer from "../../assets/Framer.png";
-import git from "../../assets/git.webp";
-import html from "../../assets/html.webp";
-import javascript from "../../assets/javascript.webp";
-import redux from "../../assets/redux.webp";
-import shadcn from "../../assets/shadcn.webp";
-import strapi from "../../assets/strapi.webp";
-import tanstack from "../../assets/tanstack.webp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-
-const stats = [
-  { title: "Years of experience", number: 2 },
-  { title: "Full Projects", number: 4 },
-  { title: "Customers", number: 3 },
-  { title: "Technologies", number: 14 },
-];
-
-const skillCategories = [
-  {
-    label: "Frontend",
-    color: "#7c3aed",
-    skills: [
-      {
-        name: "React",
-        icon: react,
-        level: 4,
-        levelLabel: "Advanced",
-        projects: 4,
-      },
-      {
-        name: "TypeScript",
-        icon: typescript,
-        level: 4,
-        levelLabel: "Advanced",
-        projects: 3,
-      },
-      {
-        name: "JavaScript",
-        icon: javascript,
-        level: 5,
-        levelLabel: "Expert",
-        projects: 4,
-      },
-      { name: "HTML", icon: html, level: 5, levelLabel: "Expert", projects: 4 },
-      { name: "CSS", icon: css, level: 4, levelLabel: "Advanced", projects: 4 },
-      {
-        name: "Redux",
-        icon: redux,
-        level: 3,
-        levelLabel: "Proficient",
-        projects: 2,
-      },
-      {
-        name: "TanStack",
-        icon: tanstack,
-        level: 2,
-        levelLabel: "Familiar",
-        projects: 1,
-      },
-    ],
-  },
-  {
-    label: "Styling & UI",
-    color: "#0ea5e9",
-    skills: [
-      {
-        name: "TailwindCSS",
-        icon: tailwindcss,
-        level: 5,
-        levelLabel: "Expert",
-        projects: 4,
-      },
-      {
-        name: "Shadcn/UI",
-        icon: shadcn,
-        level: 3,
-        levelLabel: "Proficient",
-        projects: 2,
-      },
-      {
-        name: "Framer",
-        icon: framer,
-        level: 3,
-        levelLabel: "Proficient",
-        projects: 2,
-      },
-    ],
-  },
-  {
-    label: "Design",
-    color: "#f472b6",
-    skills: [
-      {
-        name: "Figma",
-        icon: figma,
-        level: 3,
-        levelLabel: "Proficient",
-        projects: 2,
-      },
-    ],
-  },
-  {
-    label: "Backend & CMS",
-    color: "#34d399",
-    skills: [
-      {
-        name: "Strapi",
-        icon: strapi,
-        level: 2,
-        levelLabel: "Familiar",
-        projects: 1,
-      },
-    ],
-  },
-  {
-    label: "Version Control",
-    color: "#fb923c",
-    skills: [
-      { name: "Git", icon: git, level: 4, levelLabel: "Advanced", projects: 4 },
-      {
-        name: "GitHub",
-        icon: github,
-        level: 4,
-        levelLabel: "Advanced",
-        projects: 4,
-      },
-    ],
-  },
-];
+import { skillCategories, stats } from "../../data/about";
 
 const About = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -165,7 +32,6 @@ const About = () => {
   return (
     <>
       <section ref={ref} className="about mx-auto w-[min(900px,90%)] py-4">
-        {/* Header block */}
         <div className="relative mb-10 pl-5 md:mb-12">
           <span className="absolute left-0 top-0 h-full w-0.5 rounded-full bg-linear-to-b from-accent via-primary to-transparent" />
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.22em] text-text-secondary">
@@ -178,7 +44,6 @@ const About = () => {
             interactive interfaces.
           </h2>
 
-          {/* Rocket orbiting the corner */}
           <div className="rocket absolute -right-2 -top-2 h-20 w-20 md:h-28 md:w-28">
             <span className="absolute top-0 select-none text-3xl md:text-4xl">
               🚀
@@ -186,9 +51,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Stats + Photo */}
         <div className="flex flex-col gap-6 md:flex-row md:items-stretch md:gap-8">
-          {/* Stats column */}
           <div className="grid grid-cols-2 gap-3 md:flex md:w-[38%] md:flex-col md:gap-4">
             {stats.map((s, idx) => (
               <div
@@ -202,7 +65,7 @@ const About = () => {
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">
                   0{idx + 1}
                 </span>
-                <h3 className="mt-1 text-4xl font-extrabold leading-none text-white md:text-5xl">
+                <h3 className="mt-1 text-4xl font-extrabold leading-none text-white md:text-5xl tracking-widest">
                   +{s.number}
                 </h3>
                 <p className="mt-1 text-sm font-bold tracking-wider text-transparent md:text-base [-webkit-text-stroke:1px_#a1a1aa]">
@@ -213,7 +76,6 @@ const About = () => {
             ))}
           </div>
 
-          {/* Photo */}
           <div className="group relative flex-1">
             <img
               src={anas}
@@ -226,7 +88,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* ── Skills ───────────────────────────────────────────────────────────── */}
       <section className="skills mx-auto w-[min(900px,90%)] py-4">
         <div className="relative mb-10 pl-5 md:mb-12">
           <span className="absolute left-0 top-0 h-full w-0.5 rounded-full bg-linear-to-b from-accent via-primary to-transparent" />

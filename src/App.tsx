@@ -1,15 +1,18 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const PARTICLE_COUNT = 120;
+gsap.registerPlugin(useGSAP);
+
+const PARTICLE_COUNT = 160;
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useGSAP(
     () => {
@@ -36,6 +39,10 @@ function App() {
     },
     { scope: ref },
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div

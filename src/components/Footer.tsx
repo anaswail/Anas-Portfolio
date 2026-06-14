@@ -35,11 +35,19 @@ const Footer = () => {
           {/* Right — social icons row */}
           <div className="flex items-center gap-2">
             {[
-              { icon: faLinkedin, href: "#", hover: "hover:text-blue-500" },
-              { icon: faGithub, href: "#", hover: "hover:text-gray-300" },
+              {
+                icon: faLinkedin,
+                href: "https://www.linkedin.com/in/anas-wael/",
+                hover: "hover:text-blue-500",
+              },
+              {
+                icon: faGithub,
+                href: "https://github.com/anaswail",
+                hover: "hover:text-gray-300",
+              },
               {
                 icon: faInstagram,
-                href: "#",
+                href: "https://www.instagram.com/anas_wae1/",
                 hover: "hover:text-purple-400",
               },
             ].map(({ icon, href, hover }, i) => (

@@ -1,6 +1,6 @@
 import TransitionSection from "../components/TransitionSection";
 import About from "../components/home/About";
-import Projects from "../components/home/Projects";
+import Projects from "../components/home/HomeProjects";
 import Contact from "../components/home/Contact";
 import Hero from "../components/home/Hero";
 

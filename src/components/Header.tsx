@@ -210,34 +210,53 @@ const Header = () => {
         </Link>
         <ul className="nav flex gap-8 items-center">
           <li className="text-lg relative after:content-[' '] after:absolute after:-bottom-0.5 after:h-0.5 after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 after:duration-500">
-            <Link to="/" className="text-text">
+            <Link
+              to="/"
+              className="text-gray-300 hover:text-text duration-500 "
+            >
               Home
             </Link>
           </li>
           <li className="text-lg relative after:content-[' '] after:absolute after:-bottom-0.5 after:h-0.5 after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 after:duration-500">
-            <Link to="about" className="text-text">
+            <Link
+              to="about"
+              className="text-gray-300 hover:text-text duration-500 "
+            >
               About me
             </Link>
           </li>
           <li className="text-lg relative after:content-[' '] after:absolute after:-bottom-0.5 after:h-0.5 after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 after:duration-500">
-            <Link to="projects" className="text-text">
+            <Link
+              to="projects"
+              className="text-gray-300 hover:text-text duration-500 "
+            >
               Projects
             </Link>
           </li>
           <li className="text-lg relative after:content-[' '] after:absolute after:-bottom-0.5 after:h-0.5 after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 after:duration-500">
-            <Link to="content" className="text-text">
+            <Link
+              to="content"
+              className="text-gray-300 hover:text-text duration-500 "
+            >
               Content
             </Link>
           </li>
           <li className="text-lg relative after:content-[' '] after:absolute after:-bottom-0.5 after:h-0.5 after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 after:duration-500">
-            <Link to="blogs" className="text-text">
+            <Link
+              to="blogs"
+              className="text-gray-300 hover:text-text duration-500"
+            >
               Blogs
             </Link>
           </li>
         </ul>
         <ul className="links flex gap-5 items-center">
           <li>
-            <a href="" target="_blank">
+            <a
+              href="https://www.instagram.com/anas_wae1/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faInstagram}
                 className="text-2xl cursor-pointer text-secondary hover:text-primary duration-200"
@@ -245,7 +264,11 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a
+              href="https://github.com/anaswail"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faGithub}
                 className="text-2xl cursor-pointer text-secondary hover:text-primary duration-200"
@@ -253,7 +276,11 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/anas-wael/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="text-2xl cursor-pointer text-secondary hover:text-primary duration-200"

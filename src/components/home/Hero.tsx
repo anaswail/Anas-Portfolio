@@ -121,13 +121,25 @@ const Hero = () => {
           <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8 md:gap-6">
             <ul className="flex items-center gap-2.5">
               {[
-                { icon: faInstagram, hover: "group-hover:text-purple-500" },
-                { icon: faGithub, hover: "group-hover:text-gray-400" },
-                { icon: faLinkedin, hover: "group-hover:text-blue-500" },
-              ].map(({ icon, hover }, i) => (
+                {
+                  icon: faInstagram,
+                  href: "https://www.instagram.com/anas_wae1/",
+                  hover: "group-hover:text-purple-500",
+                },
+                {
+                  icon: faGithub,
+                  href: "https://github.com/anaswail",
+                  hover: "group-hover:text-gray-400",
+                },
+                {
+                  icon: faLinkedin,
+                  href: "https://www.linkedin.com/in/anas-wael/",
+                  hover: "group-hover:text-blue-500",
+                },
+              ].map(({ icon, href, hover }, i) => (
                 <li key={i}>
                   <a
-                    href=""
+                    href={href}
                     target="_blank"
                     rel="noreferrer"
                     className="btns-intro-animation group flex h-10 w-10 items-center justify-center rounded-lg bg-sec-bg drop-shadow-lg transition-colors duration-200"

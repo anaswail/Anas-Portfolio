@@ -5,8 +5,41 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { useRef } from "react";
 
 const Contact = () => {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const numberRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const projectNameRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const sendToWhatsapp = () => {
+    let name = nameRef.current?.value;
+    let hisNumber = numberRef.current?.value;
+    let email = emailRef.current?.value;
+    let projectName = projectNameRef.current?.value;
+    let message = messageRef.current?.value;
+
+    const text = `
+Name: ${name}
+Number: ${hisNumber}
+Email: ${email}
+Project Name: ${projectName}
+Message: ${message}
+`;
+
+    const url = `https://wa.me/201070636301?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank")?.focus();
+
+    nameRef.current && (nameRef.current.value = "");
+    numberRef.current && (numberRef.current.value = "");
+    emailRef.current && (emailRef.current.value = "");
+    projectNameRef.current && (projectNameRef.current.value = "");
+    messageRef.current && (messageRef.current.value = "");
+  };
+
   return (
     <section className="contact mx-auto w-[min(1100px,90%)] py-16 md:py-24">
       <div className="relative mb-12 pl-5 md:mb-16">
@@ -33,6 +66,7 @@ const Contact = () => {
                 Full Name
               </label>
               <input
+                ref={nameRef}
                 type="text"
                 placeholder="Anas Wael"
                 className="rounded-xl border border-white/[0.07] bg-white/3 px-4 py-3
@@ -49,6 +83,7 @@ const Contact = () => {
               </label>
               <input
                 type="tel"
+                ref={numberRef}
                 placeholder="+20 107 063 6301"
                 className="rounded-xl border border-white/[0.07] bg-white/3 px-4 py-3
                        text-sm text-white placeholder:text-text-secondary/40
@@ -64,6 +99,7 @@ const Contact = () => {
               </label>
               <input
                 type="email"
+                ref={emailRef}
                 placeholder="anaswail246@gmail.com"
                 className="rounded-xl border border-white/[0.07] bg-white/3 px-4 py-3
                        text-sm text-white placeholder:text-text-secondary/40
@@ -80,6 +116,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="My Awesome Project"
+                ref={projectNameRef}
                 className="rounded-xl border border-white/[0.07] bg-white/3 px-4 py-3
                        text-sm text-white placeholder:text-text-secondary/40
                        outline-none transition-colors duration-200
@@ -94,6 +131,7 @@ const Contact = () => {
               </label>
               <textarea
                 rows={5}
+                ref={messageRef}
                 placeholder="Describe your project, goals, timeline, and any specific requirements..."
                 className="resize-none rounded-xl border border-white/[0.07] bg-white/3 px-4 py-3
                        text-sm text-white placeholder:text-text-secondary/40
@@ -105,6 +143,7 @@ const Contact = () => {
 
           {/* Submit */}
           <button
+            onClick={sendToWhatsapp}
             className="group mt-5 flex w-full items-center justify-center gap-3 rounded-xl
                    bg-primary py-3.5 text-sm font-semibold text-white
                    transition-all duration-300 hover:bg-purple-700 active:scale-[0.98] md:mt-6 cursor-pointer"
@@ -169,7 +208,7 @@ const Contact = () => {
                 },
                 {
                   label: "WhatsApp",
-                  value: "+20 107 063 6301",
+                  value: "+201070363601",
                   icon: (
                     <svg
                       className="h-4 w-4"
@@ -207,7 +246,7 @@ const Contact = () => {
               {[
                 {
                   label: "LinkedIn",
-                  href: "#",
+                  href: "https://www.linkedin.com/in/anas-wael/",
                   color: "#0a66c2",
                   icon: (
                     <FontAwesomeIcon icon={faLinkedin} className="text-lg" />
@@ -215,13 +254,13 @@ const Contact = () => {
                 },
                 {
                   label: "GitHub",
-                  href: "#",
+                  href: "https://github.com/anaswail",
                   color: "#94a3b8",
                   icon: <FontAwesomeIcon icon={faGithub} className="text-lg" />,
                 },
                 {
                   label: "Instagram",
-                  href: "#",
+                  href: "https://www.instagram.com/anas_wae1/",
                   color: "#e1306c",
                   icon: (
                     <FontAwesomeIcon icon={faInstagram} className="text-lg" />
@@ -229,7 +268,7 @@ const Contact = () => {
                 },
                 {
                   label: "Facebook",
-                  href: "#",
+                  href: "https://www.facebook.com/profile.php?id=100053090326397",
                   color: "#1877f2",
                   icon: (
                     <svg
@@ -243,7 +282,7 @@ const Contact = () => {
                 },
                 {
                   label: "WhatsApp",
-                  href: "#",
+                  href: "https://wa.me/201070363601",
                   color: "#25d366",
                   icon: (
                     <svg
@@ -257,7 +296,7 @@ const Contact = () => {
                 },
                 {
                   label: "YouTube",
-                  href: "#",
+                  href: "https://www.youtube.com/@Anas_wael",
                   color: "#ff0000",
                   icon: (
                     <svg
@@ -271,7 +310,7 @@ const Contact = () => {
                 },
                 {
                   label: "TikTok",
-                  href: "#",
+                  href: "https://www.tiktok.com/@anaswae11",
                   color: "#94a3b8",
                   icon: (
                     <svg
