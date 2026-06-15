@@ -61,7 +61,7 @@ const Hero = () => {
       mm.add("(min-width: 768px)", () => {
         tl.from(
           ".ring-animation",
-          { scale: 0, opacity: 0, duration: 1, stagger: 0.15 },
+          { opacity: 0, duration: 1, stagger: 0.3 },
           "<",
         ).add(() => {
           gsap.to(ring1.current, {

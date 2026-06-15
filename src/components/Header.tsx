@@ -111,7 +111,7 @@ const Header = () => {
 
         tl.from(".menuCircleAnimation", {
           y: -100,
-          duration: 0.7,
+          duration: 0.6,
           scale: 0,
           opacity: 0,
           ease: "power2.in",
@@ -120,7 +120,7 @@ const Header = () => {
             scale: 30,
             backgroundColor: "#0b0024",
             rotate: 360,
-            duration: 1,
+            duration: 0.8,
             ease: "power2.inOut",
           })
           .from(".nav-links", {
@@ -130,18 +130,26 @@ const Header = () => {
             opacity: 0,
             ease: "power2.out",
           })
-          .from(".planet", {
-            opacity: 0,
-            scale: 0.2,
-            duration: 0.3,
-            stagger: 0.15,
-          })
-          .set(".particle", {
-            x: () => gsap.utils.random(0, window.innerWidth),
-            y: () => gsap.utils.random(0, window.innerHeight),
-            scale: () => gsap.utils.random(0.4, 1.8),
-            opacity: () => gsap.utils.random(0.3, 0.9),
-          });
+          .set(
+            ".particle",
+            {
+              x: () => gsap.utils.random(0, window.innerWidth),
+              y: () => gsap.utils.random(0, window.innerHeight),
+              scale: () => gsap.utils.random(0.4, 1.8),
+              opacity: () => gsap.utils.random(0.3, 0.9),
+            },
+            "<",
+          )
+          .from(
+            ".planet",
+            {
+              opacity: 0,
+              scale: 0.2,
+              duration: 0.3,
+              stagger: 0.15,
+            },
+            "<50%",
+          );
       } else if (hasOpened.current && isClosing) {
         const tl = gsap.timeline({
           onComplete: () => {
@@ -155,20 +163,28 @@ const Header = () => {
           duration: 0.3,
           stagger: 0.15,
         })
-          .to(".nav-links", {
-            y: 50,
-            duration: 0.8,
-            stagger: 0.15,
-            opacity: 0,
-            ease: "power2.out",
-          })
-          .to(".menuCircleAnimation", {
-            scale: 0,
-            backgroundColor: "#0b0024",
-            rotate: 360,
-            duration: 1,
-            ease: "power2.inOut",
-          })
+          .to(
+            ".nav-links",
+            {
+              y: 50,
+              duration: 0.8,
+              stagger: 0.15,
+              opacity: 0,
+              ease: "power2.out",
+            },
+            "<",
+          )
+          .to(
+            ".menuCircleAnimation",
+            {
+              scale: 0,
+              backgroundColor: "#0b0024",
+              rotate: 360,
+              duration: 0.5,
+              ease: "power2.inOut",
+            },
+            "<50%",
+          )
           .to(".menuCircleAnimation", {
             y: -100,
             duration: 0.7,
