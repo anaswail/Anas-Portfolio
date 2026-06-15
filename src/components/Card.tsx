@@ -32,7 +32,7 @@ const Card = ({ projects }: CardProps) => {
     <>
       {projects.map((p, idx) => (
         <div
-          onClick={() => navigate(`${p.slug}`)}
+          onClick={() => navigate(`/projects/${p.slug}`)}
           key={idx}
           className="cursor-pointer project-card group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-sec-bg transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40"
         >

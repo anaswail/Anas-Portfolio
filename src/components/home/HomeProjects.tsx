@@ -103,9 +103,11 @@ const HomeProjects = () => {
                 </p>
 
                 <div className="mt-8 flex items-center gap-4">
-                  <button className="h-11 rounded-lg bg-primary px-7 text-base font-semibold text-white drop-shadow-lg transition-colors duration-300 hover:bg-purple-800">
-                    View Docs
-                  </button>
+                  <Link to={`/projects/${p.slug}`} className="cursor-pointer">
+                    <button className=" h-11 rounded-lg bg-primary px-7 text-base font-semibold text-white drop-shadow-lg transition-colors duration-300 hover:bg-purple-800">
+                      View Docs
+                    </button>
+                  </Link>
                   <div className="flex items-center gap-2">
                     <a
                       href={p.repoUrl || "#"}
