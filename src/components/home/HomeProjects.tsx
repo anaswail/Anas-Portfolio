@@ -63,7 +63,10 @@ const HomeProjects = () => {
   });
   return (
     <>
-      <section className="projects-horizontal hidden h-screen w-full overflow-hidden md:flex">
+      <section
+        id="projects"
+        className="projects-horizontal hidden h-screen w-full overflow-hidden md:flex"
+      >
         {projects
           .filter((project) => project.started === true)
           .map((p, idx) => (

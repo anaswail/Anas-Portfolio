@@ -41,7 +41,10 @@ Message: ${message}
   };
 
   return (
-    <section className="contact mx-auto w-[min(1100px,90%)] py-16 md:py-24">
+    <section
+      id="contact"
+      className="contact mx-auto w-[min(1100px,90%)] py-16 md:py-24"
+    >
       <div className="relative mb-12 pl-5 md:mb-16">
         <span className="absolute left-0 top-0 h-full w-0.5 rounded-full bg-linear-to-b from-accent via-primary to-transparent" />
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.22em] text-text-secondary">
