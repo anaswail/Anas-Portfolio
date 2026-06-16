@@ -17,7 +17,7 @@ import bootstrap from "../assets/bootstrap.webp";
 import gsapLogo from "../assets/gsap.webp";
 
 export const stats = [
-  { title: "Years of experience", number: 2 },
+  { title: "Months as a freelancer", number: 2 },
   { title: "Full Projects", number: 4 },
   { title: "Customers", number: 3 },
   { title: "Technologies", number: 17 },

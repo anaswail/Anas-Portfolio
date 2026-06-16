@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import cvFile from "../../assets/Anas_Wael_CV.pdf";
+import cvFile from "../../assets/Anas_Front-end.pdf";
 
 import planet1 from "../../assets/planet-1.webp";
 import planet2 from "../../assets/planet-2.webp";
